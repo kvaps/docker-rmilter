@@ -3,7 +3,8 @@
 dir=(
     /etc/rmilter.conf
     /var/lib/rmilter
-    /var/log/rmilter
+    /var/log/messages
+    /var/log/maillog
 )
 
 move_dirs()
