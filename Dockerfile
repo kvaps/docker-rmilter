@@ -23,7 +23,7 @@ RUN adduser --system --no-create-home _rmilter
 #RUN cp /usr/src/rmilter/debian/rmilter.init /etc/init.d/rspamd
 RUN mkdir -p /var/lib/rmilter /var/run/rmilter
 RUN chown _rmilter:_rmilter /var/lib/rmilter /var/run/rmilter
-RUN cp /usr/src/rmilter/rmilter.conf.sample /etc/rmilter.conf
+ADD rmilter.conf /etc/rmilter.conf
 
 ADD rmilter-wrapper.sh /bin/rmilter-wrapper.sh
 RUN chmod +x /bin/rmilter-wrapper.sh
