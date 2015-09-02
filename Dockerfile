@@ -1,5 +1,6 @@
 FROM centos:centos6
 MAINTAINER kvaps <kvapss@gmail.com>
+ENV REFRESHED_AT 2015-09-02
 
 RUN mv /etc/localtime /etc/localtime.old; ln -s /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 RUN localedef -v -c -i en_US -f UTF-8 en_US.UTF-8; $(exit 0)
