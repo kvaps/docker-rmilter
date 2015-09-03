@@ -29,7 +29,9 @@ link_dirs()
     echo "info:  finished linking default lib and log folders to /data volume"
 }
 run()
-{
+{ 
+    #rsyslogd
+    /sbin/rsyslogd
     #Start command
     /sbin/runuser _rmilter -c "/sbin/rmilter -n -c /etc/rmilter.conf"
 }
