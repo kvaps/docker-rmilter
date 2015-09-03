@@ -31,7 +31,7 @@ link_dirs()
 run()
 {
     #Start command
-    /bin/rmilter-wrapper.sh 
+    /sbin/runuser _rmilter -c "/sbin/rmilter -n -c /etc/rmilter.conf"
 }
 
 if [ ! -d /data/etc ] ; then

@@ -26,9 +26,6 @@ RUN mkdir -p /var/lib/rmilter /var/run/rmilter
 RUN chown _rmilter:_rmilter /var/lib/rmilter /var/run/rmilter
 ADD rmilter.conf /etc/rmilter.conf
 
-ADD rmilter-wrapper.sh /bin/rmilter-wrapper.sh
-RUN chmod +x /bin/rmilter-wrapper.sh
-
 ADD start.sh /bin/start.sh
 ENTRYPOINT ["/bin/start.sh"]
 
