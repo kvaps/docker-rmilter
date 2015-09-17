@@ -1,5 +1,12 @@
 #!/bin/bash
 
+set_timezone()
+{
+    if [ -f /usr/share/zoneinfo/$TZ ]; then 
+        rm -f /etc/localtime && ln -s /usr/share/zoneinfo/$TZ /etc/localtime
+    fi
+}
+
 dir=(
     /etc/rmilter.conf
     /var/lib/rmilter
@@ -35,6 +42,8 @@ run()
     #Start command
     /sbin/runuser _rmilter -c "/sbin/rmilter -n -c /etc/rmilter.conf"
 }
+
+set_timezone
 
 if [ ! -d /data/etc ] ; then
     move_dirs
