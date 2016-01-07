@@ -37,10 +37,9 @@ link_dirs()
 }
 run()
 { 
-    #rsyslogd
-    /sbin/rsyslogd
-    #Start command
-    /sbin/runuser _rmilter -c "/sbin/rmilter -n -c /etc/rmilter.conf"
+    rsyslogd
+    tail -f -n 0 /var/log/maillog &
+    rmilter -n -c /etc/rmilter.conf
 }
 
 set_timezone
