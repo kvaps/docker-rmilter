@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dir=(
-    /etc/rmilter.conf
+    /etc/rmilter
     /var/lib/rmilter
     /var/log/messages
     /var/log/maillog
@@ -32,7 +32,7 @@ run()
 { 
     rsyslogd
     tail -f -n 0 /var/log/maillog &
-    rmilter -n -c /etc/rmilter.conf
+    rmilter -n -c /etc/rmilter/rmilter.conf
 }
 
 if [ ! -d /data/etc ] ; then

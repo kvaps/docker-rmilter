@@ -13,8 +13,8 @@ docker run \
     -v /opt/rmilter:/data:rw \
     --link rspamd:rspamd \
     --link clamd:clamd \
-    -p 11339:11339 \
-    -d \
+    --link redis:redis
+    -p 11332:11332 \
     kvaps/rmilter
 ```
 `--link` option need to connect another docker container *(e.g. rspamd and clamd)*
@@ -32,8 +32,9 @@ rmilter:
   links:
     - rspamd:rspamd
     - clamd:clamd
+    - redis:redis
   ports:
-    - 11339:11339
+    - 11332:11332
   volumes:
     - /etc/localtime:/etc/localtime:ro
     - ./rmilter:/data
